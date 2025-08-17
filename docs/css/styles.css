@@ -1,9 +1,22 @@
 :root {
-    --primary-color: #d2e6d1;
-    --secondary-color: #3c403d;
+    --primary-color: #2a9d8f;
+    --secondary-color: #264653;
+    --accent-color: #e9c46a;
     --background-color: #f5f8f4;
     --text-color: #3c403d;
     --font-family: 'Lora', serif;
+    --nav-height: 70px;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-height);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 }
 
 body {
@@ -17,11 +30,12 @@ body {
 
 /* Header Styles */
 header {
-    background: var(--primary-color);
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
     color: #fff;
-    padding: 30px 0;
+    padding: 40px 0;
     text-align: center;
     position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
@@ -39,37 +53,46 @@ header p {
 nav {
     position: sticky;
     top: 0;
-    background: var(--primary-color);
-    padding: 10px 0;
+    background: var(--secondary-color);
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     display: flex;
-    justify-content: center;
-    margin-top: 15px;
+    gap: 30px;
+    margin: 0;
 }
 
 nav ul li {
-    margin: 0 20px;
+    margin: 0;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2em;
+    font-weight: 600;
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: #eef7eb;
+nav ul li a:hover,
+nav ul li a:focus {
+    color: var(--accent-color);
+    outline: none;
 }
 
 /* Container */
 .container {
-    width: 80%;
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px 0;
 }
@@ -81,7 +104,9 @@ section h2 {
     font-size: 2.5em;
     border-bottom: 2px solid var(--primary-color);
     padding-bottom: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* About Section */
@@ -99,6 +124,7 @@ section h2 {
     width: 200px;
     height: 200px;
     object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #about p,
@@ -121,6 +147,7 @@ ul li {
 ul li a {
     color: var(--secondary-color);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 ul li a:hover {
@@ -135,7 +162,15 @@ section ul,
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section ul:hover,
+.experience-item:hover,
+.research-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .research-item h3 {
@@ -159,7 +194,7 @@ section ul,
 
 /* Footer */
 footer {
-    background: var(--primary-color);
+    background: var(--secondary-color);
     color: #fff;
     text-align: center;
     padding: 15px 0;
@@ -179,10 +214,11 @@ footer p {
     nav ul {
         flex-direction: column;
         align-items: center;
+        gap: 10px;
     }
 
     nav ul li {
-        margin: 10px 0;
+        margin: 0;
     }
 
     .profile-img {
