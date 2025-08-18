@@ -19,15 +19,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
     <!-- External CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Smooth Scrolling -->
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <!-- Header with Navigation -->
     <header>
         <div class="container">
@@ -45,12 +40,12 @@
             </nav>
         </div>
     </header>
-
+    <main id="main-content">
     <!-- About Me Section -->
     <section id="about">
         <div class="container">
             <h2>About Me</h2>
-            <img src="assets/profile.jpg" alt="Shannon Dickey - Marine Scientist" class="profile-img">
+            <img src="assets/profile.jpg" alt="Shannon Dickey - Marine Scientist" class="profile-img" loading="lazy">
             <p>Hello! I’m Shannon, a marine scientist and second-year Ph.D. student at Rutgers University. I am dedicated to making a positive difference through science by using environmental DNA (eDNA) techniques to monitor and measure biodiversity in coastal ecosystems. My research focuses on nature-based solutions that enhance biodiversity and restore coastal habitats.</p>
             <p>As an aspiring marine ecologist, I combine my love for research with public education and outreach. I am passionate about communicating scientific knowledge to diverse audiences and inspiring others to take part in conservation efforts.</p>
             <ul>
@@ -143,7 +138,7 @@
             </ul>
         </div>
     </section>
-
+    </main>
     <!-- Footer Section -->
     <footer>
         <div class="container">
