@@ -1,0 +1,15 @@
+{
+  "name": "Shannon Dickey",
+  "short_name": "SD",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#2a9d8f",
+  "theme_color": "#2a9d8f",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
